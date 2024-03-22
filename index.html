@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drum Kit</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <p>Welcome to the Drum Kit</p>
@@ -12,11 +12,11 @@
         <div data-key="65" class="key">
             <kbd>A</kbd>
             <span class="sound">clap</span>
+            <span id="trigger"></span> <!-- Trigger element -->
+
+
         </div>
-        
-        <h2>Square CSS</h2>
-        <div class="square"></div>
-        
+                
 
 
 
@@ -33,6 +33,13 @@
             audio.currentTime = 0;//rewind to the start
             audio.play();
         });
+
+        document.getElementById("trigger").addEventListener("click", function() {
+            var key = document.querySelector('.key[data-key="65"]');
+            key.classList.add('animated');
+        });
+
+
 
     </script>
 
